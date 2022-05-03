@@ -1,12 +1,15 @@
 import './App.css';
 
+// importing from firebase
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
+// importing hooks for functions
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
+// firebase authentication details
 const firebaseConfig = {
   apiKey: "AIzaSyDUcj3Vzvrtx4QzkhBfRVIBbZA-ivOyHlI",
   authDomain: "superchat-da549.firebaseapp.com",
@@ -17,10 +20,12 @@ const firebaseConfig = {
   measurementId: "G-WSB1H3TFVL"
 };
 
+// initializing firebase app
 firebase.initializeApp({
   firebaseConfig
 })
 
+// initializing firebase global variables
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
