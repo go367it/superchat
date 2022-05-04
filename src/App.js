@@ -9,8 +9,12 @@ import 'firebase/compat/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-// firebase authentication details
-const firebaseConfig = {
+//importing components
+import Chatroom from './Chatroom';
+import Signin from './Signin';
+
+// initializing firebase app
+firebase.initializeApp({
   apiKey: "AIzaSyDUcj3Vzvrtx4QzkhBfRVIBbZA-ivOyHlI",
   authDomain: "superchat-da549.firebaseapp.com",
   projectId: "superchat-da549",
@@ -18,16 +22,11 @@ const firebaseConfig = {
   messagingSenderId: "960349098249",
   appId: "1:960349098249:web:7ad50e3ac7657b35f0c3d8",
   measurementId: "G-WSB1H3TFVL"
-};
-
-// initializing firebase app
-firebase.initializeApp({
-  firebaseConfig
 })
 
 // initializing firebase global variables
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
 
 function App() {
 
@@ -35,6 +34,10 @@ function App() {
 
   return (
     <div className="App">
+
+      {
+        user ? <Chatroom /> : <Signin />
+      }
 
     </div>
   );
