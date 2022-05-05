@@ -7,7 +7,6 @@ import 'firebase/compat/firestore';
 
 // importing hooks for functions
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 //importing components
 import Chatroom from './Chatroom';
